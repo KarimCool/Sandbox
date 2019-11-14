@@ -25,7 +25,7 @@ namespace Sandbox
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            TransparentBackground(label1);
+            
             
             
 

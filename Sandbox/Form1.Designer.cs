@@ -45,7 +45,6 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -82,7 +81,7 @@
             // button12
             // 
             this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button12.Image = global::Sandbox.Properties.Resources.text2image_F6050718_20191114_202116;
             this.button12.Location = new System.Drawing.Point(669, 265);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(119, 76);
@@ -223,25 +222,11 @@
             this.textBox1.Size = new System.Drawing.Size(775, 114);
             this.textBox1.TabIndex = 30;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40.25F);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(706, 267);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 63);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "-";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.button11);
@@ -286,7 +271,6 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;      
     }
 }
 
