@@ -44,7 +44,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.readOnlyTextBox1 = new Sandbox.ReadOnlyTextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -80,12 +80,12 @@
             // 
             // button12
             // 
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Image = global::Sandbox.Properties.Resources.text2image_F6050718_20191114_202116;
+            this.button12.Font = new System.Drawing.Font("MS PGothic", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.Location = new System.Drawing.Point(669, 265);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(119, 76);
             this.button12.TabIndex = 11;
+            this.button12.Text = "-";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
@@ -212,22 +212,24 @@
             this.button16.Text = "0";
             this.button16.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // readOnlyTextBox1
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 70.25F);
-            this.textBox1.Location = new System.Drawing.Point(12, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(775, 114);
-            this.textBox1.TabIndex = 30;
+            this.readOnlyTextBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.readOnlyTextBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.readOnlyTextBox1.Location = new System.Drawing.Point(13, 12);
+            this.readOnlyTextBox1.Multiline = true;
+            this.readOnlyTextBox1.Name = "readOnlyTextBox1";
+            this.readOnlyTextBox1.ReadOnly = true;
+            this.readOnlyTextBox1.Size = new System.Drawing.Size(775, 114);
+            this.readOnlyTextBox1.TabIndex = 31;
+            this.readOnlyTextBox1.Text = "lol";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.readOnlyTextBox1);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
@@ -270,7 +272,7 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.TextBox textBox1;
+        private ReadOnlyTextBox readOnlyTextBox1;
     }
 }
 
