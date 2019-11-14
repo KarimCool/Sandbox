@@ -222,7 +222,6 @@
             this.readOnlyTextBox1.ReadOnly = true;
             this.readOnlyTextBox1.Size = new System.Drawing.Size(775, 114);
             this.readOnlyTextBox1.TabIndex = 31;
-            this.readOnlyTextBox1.Text = "lol";
             // 
             // Form1
             // 
