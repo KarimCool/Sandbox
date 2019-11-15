@@ -46,6 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.calculationProcess.cs">
+      <SubType>Form</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReadOnlyTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
