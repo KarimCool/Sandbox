@@ -70,19 +70,15 @@ namespace Sandbox
         {
 
         }
-
-        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-         
-           if (e.KeyChar == (char)Keys.Enter)
-           {
-                MessageBox.Show("easy");
-
-               // numbersShown = result.ToString();
-               // readOnlyTextBox1.Text = numbersShown;
-           }
-
-            
+            if (keyData == Keys.Enter)
+            {
+                numbersShown = result.ToString();
+                readOnlyTextBox1.Text = numbersShown;
+                return true;
+            }
+            else return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

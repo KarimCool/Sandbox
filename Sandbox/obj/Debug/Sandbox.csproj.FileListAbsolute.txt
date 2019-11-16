@@ -8,3 +8,4 @@ C:\Users\karim\source\repos\Sandbox\Sandbox\obj\Debug\Sandbox.csproj.GenerateRes
 C:\Users\karim\source\repos\Sandbox\Sandbox\obj\Debug\Sandbox.csproj.CopyComplete
 C:\Users\karim\source\repos\Sandbox\Sandbox\obj\Debug\Sandbox.exe
 C:\Users\karim\source\repos\Sandbox\Sandbox\obj\Debug\Sandbox.pdb
+C:\Users\karim\source\repos\Sandbox\Sandbox\obj\Debug\Sandbox.csprojAssemblyReference.cache
