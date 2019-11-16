@@ -15,13 +15,15 @@ namespace Sandbox
         
         public Form1()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            result = new Deveel.Math.BigDecimal(0);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-          
             
+
+
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -69,8 +71,18 @@ namespace Sandbox
 
         }
 
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+         
+           if (e.KeyChar == (char)Keys.Enter)
+           {
+                MessageBox.Show("easy");
 
+               // numbersShown = result.ToString();
+               // readOnlyTextBox1.Text = numbersShown;
+           }
 
-
+            
+        }
     }
 }
