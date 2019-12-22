@@ -106,14 +106,14 @@ namespace Sandbox
         {
             if (keyData == Keys.Enter)
             {
-                calculationProcessParenthesis();
+                //calculationProcessParenthesis();
                 while (numbersOrder.Count != 1)
                 {
                     calculationProcessSigns(0, numbersOrder.Count);
-                }
+                } 
                 numbersShown = numbersOrder[0];
                 readOnlyTextBox1.Text = numbersShown;
-                numbersOrder.Clear();
+                //numbersOrder.Clear();
                 enteringNumber = false;
                 return true;
             }

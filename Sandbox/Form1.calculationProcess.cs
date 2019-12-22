@@ -85,14 +85,13 @@ namespace Sandbox
                 }
                 else if (numbersOrder[u].Contains("+"))
                 {
-                    dodgingExceptions(u);
+                    //dodgingExceptions(u);
                     first = Convert.ToDecimal(numbersOrder[u - 1]);
                     second = Convert.ToDecimal(numbersOrder[u + 1]);
                     resultLocal = first + second;
-                    numbersOrder.RemoveAt(u - 1);
-                    numbersOrder.RemoveAt(u + 1);
-                    numbersOrder.RemoveAt(u);
                     numbersOrder[u - 1] = resultLocal.ToString();
+                    numbersOrder.RemoveRange(u, 2);
+                    
                 }
             }
         }
