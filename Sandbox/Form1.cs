@@ -69,7 +69,7 @@ namespace Sandbox
         {
             if (keyData == Keys.Enter)
             {
-                calculationProcessParenthesis();
+                calculationProcessParenthesis(0, numbersOrder);
                 while (numbersOrder.Count != 1)
                 {
                     calculationProcessSigns(0, numbersOrder.Count-1);
@@ -262,7 +262,7 @@ namespace Sandbox
 
         private void button19_Click(object sender, EventArgs e)
         {
-            numbersShown += ",";
+            numbersShown += ".";
             if (enteringNumber == true){numbersOrder[numbersOrder.Count - 1] += ".";}
             else{numbersOrder.Add("."); enteringNumber = true;}
             readOnlyTextBox1.Text = numbersShown;
