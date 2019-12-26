@@ -45,14 +45,17 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.readOnlyTextBox1 = new Sandbox.ReadOnlyTextBox();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40.25F);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 33F);
             this.button1.Location = new System.Drawing.Point(532, 133);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(256, 67);
+            this.button1.Size = new System.Drawing.Size(119, 67);
             this.button1.TabIndex = 0;
             this.button1.Text = "DEL";
             this.button1.UseVisualStyleBackColor = true;
@@ -63,7 +66,7 @@
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30.25F);
             this.button2.Location = new System.Drawing.Point(532, 206);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(256, 53);
+            this.button2.Size = new System.Drawing.Size(119, 53);
             this.button2.TabIndex = 1;
             this.button2.Text = "C";
             this.button2.UseVisualStyleBackColor = true;
@@ -101,7 +104,7 @@
             this.button13.TabIndex = 18;
             this.button13.Text = "+";
             this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click_1);
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button14
             // 
@@ -200,7 +203,7 @@
             this.button10.TabIndex = 27;
             this.button10.Text = "8";
             this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click_1);
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
@@ -236,11 +239,47 @@
             this.readOnlyTextBox1.TabIndex = 31;
             this.readOnlyTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // button17
+            // 
+            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 33F);
+            this.button17.Location = new System.Drawing.Point(668, 133);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(59, 67);
+            this.button17.TabIndex = 32;
+            this.button17.Text = "(";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // button18
+            // 
+            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 33F);
+            this.button18.Location = new System.Drawing.Point(729, 133);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(59, 67);
+            this.button18.TabIndex = 33;
+            this.button18.Text = ")";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // button19
+            // 
+            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F);
+            this.button19.Location = new System.Drawing.Point(668, 206);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(119, 53);
+            this.button19.TabIndex = 34;
+            this.button19.Text = "‧";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button19);
+            this.Controls.Add(this.button18);
+            this.Controls.Add(this.button17);
             this.Controls.Add(this.readOnlyTextBox1);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.button11);
@@ -285,6 +324,9 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button16;
         private ReadOnlyTextBox readOnlyTextBox1;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button19;
     }
 }
 

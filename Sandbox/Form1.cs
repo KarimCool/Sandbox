@@ -12,32 +12,15 @@ using System.Windows.Forms;
 namespace Sandbox
 {
     public partial class Form1 : Form
-    {
-        
+    {     
         public Form1()
         {
             InitializeComponent();
-            
-            
-
-
-
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-
-
-
         }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             numbersShown += "1";
@@ -52,22 +35,7 @@ namespace Sandbox
             }
             readOnlyTextBox1.Text = numbersShown;
         }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
-        private void textBox1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button10_Click_1(object sender, EventArgs e)
+        private void button10_Click(object sender, EventArgs e)
         {
             numbersShown += "8";
             if (enteringNumber == true)
@@ -82,7 +50,7 @@ namespace Sandbox
             readOnlyTextBox1.Text = numbersShown;
         }
 
-        private void button13_Click_1(object sender, EventArgs e)
+        private void button13_Click(object sender, EventArgs e)
         {
             numbersShown += "+";
             numbersOrder.Add("+");
@@ -97,19 +65,14 @@ namespace Sandbox
             enteringNumber = false;
             readOnlyTextBox1.Text = numbersShown;
         }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Enter)
             {
-                //calculationProcessParenthesis();
+                calculationProcessParenthesis();
                 while (numbersOrder.Count != 1)
                 {
-                    calculationProcessSigns(0, numbersOrder.Count);
+                    calculationProcessSigns(0, numbersOrder.Count-1);
                 } 
                 numbersShown = numbersOrder[0];
                 readOnlyTextBox1.Text = numbersShown;
@@ -133,49 +96,109 @@ namespace Sandbox
                 enteringNumber = true;
             }
             readOnlyTextBox1.Text = numbersShown;
-        }
-       
-
-
+        }       
         private void button5_Click(object sender, EventArgs e)
         {
             numbersShown += "3";
+            if (enteringNumber == true)
+            {
+                numbersOrder[numbersOrder.Count - 1] += "3";
+            }
+            else
+            {
+                numbersOrder.Add("3");
+                enteringNumber = true;
+            }
             readOnlyTextBox1.Text = numbersShown;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             numbersShown += "4";
+            if (enteringNumber == true)
+            {
+                numbersOrder[numbersOrder.Count - 1] += "4";
+            }
+            else
+            {
+                numbersOrder.Add("4");
+                enteringNumber = true;
+            }
             readOnlyTextBox1.Text = numbersShown;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             numbersShown += "5";
+            if (enteringNumber == true)
+            {
+                numbersOrder[numbersOrder.Count - 1] += "5";
+            }
+            else
+            {
+                numbersOrder.Add("5");
+                enteringNumber = true;
+            }
             readOnlyTextBox1.Text = numbersShown;
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             numbersShown += "6";
+            if (enteringNumber == true)
+            {
+                numbersOrder[numbersOrder.Count - 1] += "6";
+            }
+            else
+            {
+                numbersOrder.Add("6");
+                enteringNumber = true;
+            }
             readOnlyTextBox1.Text = numbersShown;
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             numbersShown += "7";
+            if (enteringNumber == true)
+            {
+                numbersOrder[numbersOrder.Count - 1] += "7";
+            }
+            else
+            {
+                numbersOrder.Add("7");
+                enteringNumber = true;
+            }
             readOnlyTextBox1.Text = numbersShown;
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             numbersShown += "9";
+            if (enteringNumber == true)
+            {
+                numbersOrder[numbersOrder.Count - 1] += "9";
+            }
+            else
+            {
+                numbersOrder.Add("9");
+                enteringNumber = true;
+            }
             readOnlyTextBox1.Text = numbersShown;
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
             numbersShown += "0";
+            if (enteringNumber == true)
+            {
+                numbersOrder[numbersOrder.Count - 1] += "0";
+            }
+            else
+            {
+                numbersOrder.Add("0");
+                enteringNumber = true;
+            }
             readOnlyTextBox1.Text = numbersShown;
         }
 
@@ -188,16 +211,20 @@ namespace Sandbox
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (numbersOrder[numbersOrder.Count - 1].Length != 0)
+            if (numbersOrder.Count != 0)
             {
-                numbersOrder[numbersOrder.Count - 1] = numbersOrder[numbersOrder.Count - 1].Remove(numbersOrder[numbersOrder.Count - 1].Length - 1);                
-                numbersShown = numbersShown.Remove(numbersShown.Length - 1);
-                readOnlyTextBox1.Text = numbersShown;
+                if (numbersOrder[numbersOrder.Count - 1].Length != 0)
+                {
+                    numbersOrder[numbersOrder.Count - 1] = numbersOrder[numbersOrder.Count - 1].Remove(numbersOrder[numbersOrder.Count - 1].Length - 1);
+                    numbersShown = numbersShown.Remove(numbersShown.Length - 1);                    
+                }
+                else
+                {
+                    numbersOrder.RemoveAt(numbersOrder.Count - 1);                    
+                }                
+                if (numbersOrder.Count == 0) { enteringNumber = false; }
             }
-            else
-            {
-                numbersOrder.RemoveAt(numbersOrder.Count - 1);
-            }
+            readOnlyTextBox1.Text = numbersShown;
         }          
         private void button14_Click(object sender, EventArgs e)
         {
@@ -212,6 +239,32 @@ namespace Sandbox
             numbersShown += "/";
             numbersOrder.Add("/");
             enteringNumber = false;
+            readOnlyTextBox1.Text = numbersShown;
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            numbersShown += "(";
+            numbersOrder.Add("(");
+            enteringNumber = false;
+            readOnlyTextBox1.Text = numbersShown;
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+
+            numbersShown += ")";
+            numbersOrder.Add(")");
+            enteringNumber = false;
+            readOnlyTextBox1.Text = numbersShown;
+        
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            numbersShown += ",";
+            if (enteringNumber == true){numbersOrder[numbersOrder.Count - 1] += ".";}
+            else{numbersOrder.Add("."); enteringNumber = true;}
             readOnlyTextBox1.Text = numbersShown;
         }
     }

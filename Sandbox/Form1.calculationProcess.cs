@@ -16,12 +16,13 @@ namespace Sandbox
     {
         private string numbersShown;
         private decimal resultLocal;
-        private bool enteringNumber = false;
         private List<string> numbersOrder = new List<string>();       
         private int progressionStart;
         private int progressionIndicator;
         private decimal first;
         private decimal second;
+        private bool enteringNumber;
+        private int calculationCounter;
         private void calculationProcessParenthesis()
         {
             while (numbersOrder.Contains("("))
@@ -38,24 +39,25 @@ namespace Sandbox
                             progressionIndicator++;
                             
                         }
-                        if (progressionIndicator == numbersOrder.Count - 1)
-                        {
+                        if (numbersOrder[progressionIndicator] == ")" )
+                        {              
                             numbersOrder.RemoveAt(i);
+                            numbersOrder.RemoveAt(progressionIndicator - calculationProcessSigns(progressionStart, progressionIndicator - 2) - 1);
                         }
                         else
                         {
-                            calculationProcessSigns(progressionStart, progressionIndicator - 1);
                             numbersOrder.RemoveAt(i);
-                            numbersOrder.RemoveAt(progressionIndicator);
+                            
                         }
                     }                        
                 }
             }
         }
-        private void calculationProcessSigns(int numberBeforeLocation, int numberAfterLocation)
+        private int calculationProcessSigns(int numberBeforeLocation, int numberAfterLocation)
         {
+            calculationCounter = 0;
             for (int u = numberBeforeLocation; u < numberAfterLocation; u++)
-            {          
+            {
                 if (numbersOrder[u].Contains("*"))
                 {
                     dodgingExceptions(u);
@@ -64,6 +66,8 @@ namespace Sandbox
                     resultLocal = first * second;
                     numbersOrder.RemoveRange(u - 1, 2);
                     numbersOrder[u - 1] = resultLocal.ToString();
+                    calculationCounter += 2;
+                    numberAfterLocation -= 2;
                 }
                 else if (numbersOrder[u].Contains("/"))
                 {
@@ -73,6 +77,8 @@ namespace Sandbox
                     resultLocal = first / second;
                     numbersOrder.RemoveRange(u - 1, 2);
                     numbersOrder[u - 1] = resultLocal.ToString();
+                    calculationCounter += 2;
+                    numberAfterLocation -= 2;
                 }
                 else if (numbersOrder[u].Contains("-"))
                 {
@@ -82,18 +88,22 @@ namespace Sandbox
                     resultLocal = first - second;
                     numbersOrder.RemoveRange(u - 1, 2);
                     numbersOrder[u - 1] = resultLocal.ToString();
+                    calculationCounter += 2;
+                    numberAfterLocation -= 2;
                 }
                 else if (numbersOrder[u].Contains("+"))
                 {
-                    //dodgingExceptions(u);
+                    dodgingExceptions(u);
                     first = Convert.ToDecimal(numbersOrder[u - 1]);
                     second = Convert.ToDecimal(numbersOrder[u + 1]);
                     resultLocal = first + second;
+                    numbersOrder.RemoveRange(u - 1, 2);
                     numbersOrder[u - 1] = resultLocal.ToString();
-                    numbersOrder.RemoveRange(u, 2);
-                    
+                    calculationCounter += 2;
+                    numberAfterLocation -= 2;
                 }
             }
+            return calculationCounter;            
         }
 
         private void dodgingExceptions(int index)
@@ -103,8 +113,5 @@ namespace Sandbox
                 numbersOrder.RemoveAt(index + 1);
             }
         }
-
-
-
     }
 }
