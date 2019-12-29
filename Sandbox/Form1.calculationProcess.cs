@@ -94,7 +94,10 @@ namespace Sandbox
                     calculationCounter += 2;
                     numberAfterLocation -= 2;
                 }
-                else if (numbersOrder[u].Contains("-"))
+            }
+            for (int u = numberBeforeLocation; u < numberAfterLocation; u++) 
+            {
+                if (numbersOrder[u].Contains("-"))
                 {
                     dodgingExceptions(u);
                     first = Convert.ToDecimal(numbersOrder[u - 1], engFormat);
@@ -117,6 +120,8 @@ namespace Sandbox
                     numberAfterLocation -= 2;
                 }
             }
+                
+            
             return calculationCounter;            
         }
         private void dodgingExceptions(int index)
